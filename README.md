@@ -1,2 +1,6 @@
 # house-price-prediction
 This repository contains a house price prediction algorithm I created, where I try to calculate the price a house would sell for, given just it's location and sale date.
+The program takes in a csv file of data relating to each property: location, date sold and sale price. The csv excludes factors such as land area, property size and number of bedrooms/bathrooms etc.
+My algorithm finds the selling price of 100 properties in the csv sold close to that date (to consider the market prices at that time) and the selling price of 100 properties in the csv sold close to the area (using geohashes to consider the market prices in the surrounding area). I take a weighted average of these to calculate the predicted price of the house in question.
+This code goes through 100 properties selected at random from the database and prints the actual selling price, followed by the predicted price and the percentage difference between the actual and predicted prices.
+Then at the end of the 100 random properties, I calculated the median percentage difference between my predictions and the actual prices (I found this to be roughly 25%, but it varies among different randomly selected groups).
